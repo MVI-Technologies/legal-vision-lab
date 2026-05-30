@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
+import { cn } from "@/lib/utils";
+import { TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
