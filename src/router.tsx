@@ -14,3 +14,9 @@ export const getRouter = () => {
 
   return router;
 };
+
+// Se estiver rodando no navegador, hidratar o app manualmente
+if (typeof document !== "undefined") {
+  const router = getRouter();
+  router.hydrate();
+}
