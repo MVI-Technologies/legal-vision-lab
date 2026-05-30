@@ -1,10 +1,11 @@
 import { hydrateRoot } from "react-dom/client";
-import { StartClient } from "@tanstack/react-start";
+import { createStart } from "@tanstack/react-start";
 import { getRouter } from "./router";
 
 const router = getRouter();
+const StartInstance = createStart(() => ({ router }));
 
 const rootElement = document.getElementById("root");
 if (rootElement) {
-  hydrateRoot(rootElement, <StartClient router={router} />);
+  hydrateRoot(rootElement, <StartInstance />);
 }
