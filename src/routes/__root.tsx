@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
 import { WhatsAppFab } from "../components/site/WhatsAppFab";
@@ -18,18 +18,20 @@ import { WhatsAppFab } from "../components/site/WhatsAppFab";
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
+      <div className="max-w-md text-center space-y-6">
+        <div className="font-display text-8xl italic text-accent opacity-20">404</div>
+        <div className="space-y-2">
+          <h1 className="font-display text-2xl italic">Página não localizada</h1>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            O conteúdo que você busca pode ter sido movido ou não está mais disponível em nossa base confidencial.
+          </p>
+        </div>
+        <div className="pt-4">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="bg-foreground text-background px-8 py-3 text-[11px] uppercase tracking-widest hover:bg-accent transition-colors"
           >
-            Go home
+            Retornar ao Início
           </Link>
         </div>
       </div>
@@ -38,37 +40,32 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+  console.error("Erro capturado:", error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+      <div className="max-w-md text-center space-y-6">
+        <div className="font-display text-2xl italic">Instabilidade Técnica</div>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Ocorreu uma falha inesperada no processamento dos dados. Nossa equipe técnica já foi notificada para manter o rigor de nossa plataforma.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <div className="pt-4 flex flex-wrap justify-center gap-4">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="bg-foreground text-background px-8 py-3 text-[11px] uppercase tracking-widest hover:bg-accent transition-colors"
           >
-            Try again
+            Tentar Novamente
           </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          <Link
+            to="/"
+            className="border border-border px-8 py-3 text-[11px] uppercase tracking-widest hover:bg-secondary transition-colors"
           >
-            Go home
-          </a>
+            Página Inicial
+          </Link>
         </div>
       </div>
     </div>
