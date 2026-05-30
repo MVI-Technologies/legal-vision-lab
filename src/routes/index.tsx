@@ -5,13 +5,13 @@ import profileTailoring from "@/assets/profile-tailoring.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Martins S.A. — Advocacia Criminal Estratégica em São Paulo" },
+      { title: "Martins S.A. | Advocacia Criminal de Alta Complexidade" },
       {
         name: "description",
         content:
-          "Escritório boutique de Direito Criminal. Defesa técnica e sigilosa em crimes econômicos, tribunal do júri, habeas corpus e tribunais superiores.",
+          "Defesa técnica estratégica para executivos e empresas. Atuação em crimes econômicos, conformidade criminal e tribunais superiores com absoluto sigilo.",
       },
-      { property: "og:title", content: "Martins S.A. — Advocacia Criminal Estratégica" },
+      { property: "og:title", content: "Martins S.A. | Advocacia Criminal de Alto Nível" },
       {
         property: "og:description",
         content:
