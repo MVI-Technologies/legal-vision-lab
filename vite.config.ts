@@ -21,10 +21,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["@tanstack/react-start"],
   },
-  build: {
-    rollupOptions: {
-      external: ["node:async_hooks"],
-    },
-  },
 });
 
