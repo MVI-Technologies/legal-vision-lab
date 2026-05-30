@@ -77,16 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Martins S.A. — Advocacia Criminal Estratégica" },
+      { title: "Martins S.A. | Advocacia Criminal de Alto Nível e Estratégia Jurídica" },
       {
         name: "description",
         content:
-          "Escritório boutique de Direito Criminal. Defesa técnica em crimes econômicos, tribunal do júri e tribunais superiores.",
+          "Especialistas em Direito Criminal de alta complexidade. Defesa técnica em crimes econômicos, Tribunal do Júri e instâncias superiores. Atendimento exclusivo em São Paulo e Brasília.",
       },
+      { name: "keywords", content: "advogado criminalista, direito penal, crimes econômicos, compliance criminal, tribunal do júri, martins s.a., advocacia criminal são paulo" },
       { name: "author", content: "Martins Sociedade de Advogados" },
+      { name: "robots", content: "index, follow" },
       { property: "og:site_name", content: "Martins S.A." },
+      { property: "og:title", content: "Martins S.A. | Advocacia Criminal Estratégica" },
+      { property: "og:description", content: "Defesa técnica e sigilo absoluto em causas criminais complexas." },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#1a1a1a" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -96,6 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap",
       },
+      { rel: "icon", href: "/favicon.ico" },
     ],
   }),
   shellComponent: RootShell,
@@ -109,6 +116,29 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LegalService",
+              "name": "Martins Sociedade de Advogados",
+              "description": "Escritório de advocacia criminal de alta complexidade focado em crimes econômicos e defesa estratégica.",
+              "url": "https://martinsadv.com.br",
+              "telephone": "+5511990000000",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. Brigadeiro Faria Lima, 4500",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "postalCode": "04538-132",
+                "addressCountry": "BR"
+              },
+              "priceRange": "$$$",
+              "image": "https://martinsadv.com.br/og-image.jpg"
+            })
+          }}
+        />
       </head>
       <body>
         {children}
