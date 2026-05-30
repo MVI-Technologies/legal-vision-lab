@@ -3,13 +3,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/resultados")({
   head: () => ({
     meta: [
-      { title: "Resultados & Diferenciais — Martins S.A." },
+      { title: "Resultados e Diferenciais | Histórico de Excelência | Martins S.A." },
       {
         name: "description",
         content:
-          "Casos conduzidos, métricas de êxito em medidas de urgência e diferenciais técnicos do escritório boutique Martins S.A.",
+          "Analise nosso histórico de decisões favoráveis e o impacto de nossa estratégia jurídica em casos de repercussão nacional.",
       },
-      { property: "og:title", content: "Resultados & Diferenciais — Martins S.A." },
+      { property: "og:title", content: "Resultados e Diferenciais | Martins S.A." },
       {
         property: "og:description",
         content: "Resultados em defesa criminal estratégica para clientes corporativos.",

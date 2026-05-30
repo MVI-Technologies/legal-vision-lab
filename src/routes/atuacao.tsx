@@ -3,16 +3,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/atuacao")({
   head: () => ({
     meta: [
-      { title: "Áreas de Atuação — Martins S.A." },
+      { title: "Áreas de Atuação | Expertise em Direito Criminal | Martins S.A." },
       {
         name: "description",
         content:
-          "Especialidades em Direito Criminal: crimes econômicos, tribunal do júri, habeas corpus, compliance criminal, crimes tributários e tribunais superiores.",
+          "Conheça nossa expertise em Crimes Econômicos, Tribunal do Júri, Crimes Cibernéticos e Defesa Estratégica em Instâncias Superiores.",
       },
-      { property: "og:title", content: "Áreas de Atuação — Martins S.A." },
+      { property: "og:title", content: "Expertise Criminal Estratégica | Martins S.A." },
       {
         property: "og:description",
-        content: "Expertise criminal de boutique em sete frentes estratégicas.",
+        content: "Defesa criminal boutique em seis frentes estratégicas de alta complexidade.",
       },
       { property: "og:url", content: "/atuacao" },
     ],

@@ -4,13 +4,13 @@ import profileTailoring from "@/assets/profile-tailoring.jpg";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "O Escritório — Martins S.A." },
+      { title: "O Escritório | Rigor Técnico e Tradição Moderna | Martins S.A." },
       {
         name: "description",
         content:
-          "Escritório boutique de Direito Criminal fundado pelo Dr. Ricardo Martins. Atendimento personalizado, técnica processual penal de elite e discrição absoluta.",
+          "Fundado sob princípios de discrição e excelência técnica, o escritório Martins S.A. redefine a advocacia criminal corporativa.",
       },
-      { property: "og:title", content: "O Escritório — Martins S.A." },
+      { property: "og:title", content: "Sobre o Escritório | Martins S.A." },
       {
         property: "og:description",
         content: "Direito Criminal boutique. Defesa em profundidade, não em escala.",

@@ -3,13 +3,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/artigos")({
   head: () => ({
     meta: [
-      { title: "Artigos Jurídicos — Martins S.A." },
+      { title: "Artigos e Notas Técnicas | Inteligência Jurídica | Martins S.A." },
       {
         name: "description",
         content:
-          "Análises técnicas e estratégicas sobre Direito Penal Econômico, Tribunal do Júri, jurisprudência do STJ e STF e compliance criminal.",
+          "Análises técnicas sobre o cenário jurídico criminal, jurisprudência e atualizações legislativas relevantes para o ambiente corporativo.",
       },
-      { property: "og:title", content: "Artigos Jurídicos — Martins S.A." },
+      { property: "og:title", content: "Artigos e Notas Técnicas | Martins S.A." },
       {
         property: "og:description",
         content: "Conteúdo técnico de Direito Criminal pelo escritório Martins S.A.",
