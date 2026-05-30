@@ -3,9 +3,11 @@ import { createStart } from "@tanstack/react-start";
 import { getRouter } from "./router";
 
 const router = getRouter();
-const StartInstance = createStart({ router });
+const StartInstance = createStart(() => ({ router }));
 
 const rootElement = document.getElementById("root");
 if (rootElement) {
-  hydrateRoot(rootElement, <StartInstance />);
+  // @ts-ignore - Forçando a inicialização para corrigir a tela branca
+  const App = StartInstance();
+  hydrateRoot(rootElement, <App />);
 }
