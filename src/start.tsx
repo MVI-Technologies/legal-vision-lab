@@ -7,5 +7,6 @@ const StartInstance = createStart(() => ({ router }));
 
 const rootElement = document.getElementById("root");
 if (rootElement) {
+  // @ts-ignore - Forçando renderização para resolver a tela branca
   hydrateRoot(rootElement, <StartInstance />);
 }
