@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
+import { cn } from "@/lib/utils";
+import { TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -32,8 +34,9 @@ const schema = z.object({
 });
 
 function Contato() {
-  const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "ok" | "error" | "scheduling">("idle");
   const [error, setError] = useState<string>("");
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -45,8 +48,12 @@ function Contato() {
       return;
     }
     setError("");
+    setStatus("scheduling");
+  }
+
+  function confirmSchedule() {
+    if (!selectedDate) return;
     setStatus("ok");
-    e.currentTarget.reset();
   }
 
   return (
@@ -111,54 +118,97 @@ function Contato() {
             </div>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="md:col-span-7 bg-secondary p-10 space-y-6"
-          >
-            <h2 className="font-display text-3xl italic">Inicie uma análise reservada</h2>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              <Field label="Nome completo" name="nome" required />
-              <Field label="Email corporativo" name="email" type="email" required />
-              <Field label="Telefone / WhatsApp" name="telefone" required />
-              <Field label="Área de interesse" name="area" placeholder="Crimes econômicos, júri…" />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="mensagem" className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                Breve descrição do caso
-              </label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                rows={5}
-                required
-                maxLength={1500}
-                className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-accent resize-none"
-              />
-            </div>
-
-            {status === "error" && (
-              <p className="text-xs text-destructive">{error}</p>
+          <div className="md:col-span-7 bg-secondary p-10 space-y-6 relative overflow-hidden">
+            {status !== "scheduling" && status !== "ok" && (
+              <form onSubmit={handleSubmit} noValidate className="space-y-6 animate-in fade-in duration-500">
+                <h2 className="font-display text-3xl italic">Inicie uma análise reservada</h2>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <Field label="Nome completo" name="nome" required />
+                  <Field label="Email corporativo" name="email" type="email" required />
+                  <Field label="Telefone / WhatsApp" name="telefone" required />
+                  <Field label="Área de interesse" name="area" placeholder="Crimes econômicos, júri…" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="mensagem" className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                    Breve descrição do caso
+                  </label>
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows={5}
+                    required
+                    maxLength={1500}
+                    className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-accent resize-none"
+                  />
+                </div>
+                {status === "error" && <p className="text-xs text-destructive">{error}</p>}
+                <button
+                  type="submit"
+                  className="w-full bg-foreground text-background py-4 text-[11px] uppercase tracking-widest hover:bg-accent transition-colors"
+                >
+                  Continuar para Agendamento
+                </button>
+              </form>
             )}
+
+            {status === "scheduling" && (
+              <div className="space-y-6 animate-in slide-in-from-right duration-500">
+                <h2 className="font-display text-3xl italic">Escolha o melhor horário</h2>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest font-mono">Disponibilidade Técnica</p>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  {["09:00", "11:00", "14:30", "16:00", "17:30"].map((time) => (
+                    <button
+                      key={time}
+                      onClick={() => setSelectedDate(new Date())}
+                      className={cn(
+                        "py-3 border border-border text-xs font-mono transition-colors",
+                        selectedDate ? "bg-accent text-white border-accent" : "bg-white hover:border-accent"
+                      )}
+                    >
+                      {time}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="pt-4 border-t border-border flex gap-4">
+                  <button 
+                    onClick={() => setStatus("idle")}
+                    className="flex-1 py-3 text-[10px] uppercase tracking-widest border border-border hover:bg-white transition-colors"
+                  >
+                    Voltar
+                  </button>
+                  <button 
+                    onClick={confirmSchedule}
+                    disabled={!selectedDate}
+                    className="flex-[2] py-3 text-[10px] uppercase tracking-widest bg-foreground text-background hover:bg-accent disabled:opacity-50 transition-colors"
+                  >
+                    Confirmar Análise
+                  </button>
+                </div>
+              </div>
+            )}
+
             {status === "ok" && (
-              <p className="text-xs text-accent">
-                Recebido. Retornaremos em até 24h úteis com discrição.
-              </p>
+              <div className="py-20 text-center space-y-6 animate-in zoom-in duration-500">
+                <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto">
+                  <TrendingUp size={32} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-display text-2xl italic">Agendamento Confirmado</h3>
+                  <p className="text-sm text-muted-foreground max-w-xs mx-auto">
+                    Sua análise reservada foi agendada. Você receberá um link seguro via email e WhatsApp em instantes.
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setStatus("idle")}
+                  className="text-[10px] uppercase tracking-widest font-mono text-accent hover:underline"
+                >
+                  Agendar outro horário
+                </button>
+              </div>
             )}
-
-            <button
-              type="submit"
-              className="w-full bg-foreground text-background py-4 text-[11px] uppercase tracking-widest hover:bg-accent transition-colors"
-            >
-              Enviar Solicitação
-            </button>
-            <p className="text-[10px] text-muted-foreground leading-relaxed">
-              Toda comunicação é confidencial. Os dados informados são usados
-              exclusivamente para retorno técnico.
-            </p>
-          </form>
+          </div>
         </div>
       </section>
     </>
