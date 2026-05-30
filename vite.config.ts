@@ -18,4 +18,13 @@ export default defineConfig({
     host: "::",
     port: 8080,
   },
+  optimizeDeps: {
+    exclude: ["@tanstack/react-start"],
+  },
+  build: {
+    rollupOptions: {
+      external: ["node:async_hooks"],
+    },
+  },
 });
+
