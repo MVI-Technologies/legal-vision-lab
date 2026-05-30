@@ -4,4 +4,7 @@ import { getRouter } from "./router";
 
 const router = getRouter();
 
-hydrateRoot(document, <StartClient router={router} />);
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  hydrateRoot(rootElement, <StartClient router={router} />);
+}
