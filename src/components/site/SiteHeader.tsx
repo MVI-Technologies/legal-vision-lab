@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { Logo } from "./Logo";
 
 const NAV = [
   { to: "/atuacao", label: "Expertise" },
@@ -14,8 +15,8 @@ export function SiteHeader() {
   return (
     <nav className="sticky top-0 z-50 bg-[#1A1A1A] border-b border-white/10 text-[#F5F0EB]">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="font-display text-xl font-semibold tracking-tight text-white hover:text-accent transition-colors">
-          MARTINS <span className="text-accent font-light">S.A.</span>
+        <Link to="/" className="text-white hover:text-accent transition-colors">
+          <Logo />
         </Link>
         <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-medium text-zinc-300">
           {NAV.map((item) => (

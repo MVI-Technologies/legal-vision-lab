@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Logo } from "./Logo";
 
 export function SiteFooter() {
   return (
@@ -6,9 +7,7 @@ export function SiteFooter() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-2 space-y-6">
-            <div className="font-display text-2xl font-semibold tracking-tight">
-              MARTINS <span className="text-accent font-light">S.A.</span>
-            </div>
+            <Logo iconSizeClass="w-7 h-7" textSizeClass="text-2xl" className="text-foreground" />
             <p className="max-w-xs text-xs text-muted-foreground leading-loose">
               Excelência jurídica pautada no sigilo absoluto e no rigor técnico.
               Atendimento corporativo premium em Direito Criminal.
