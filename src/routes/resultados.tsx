@@ -61,16 +61,16 @@ const DIFFS = [
 function Resultados() {
   return (
     <>
-      <section className="px-6 pt-24 pb-16 border-b border-border">
+      <section className="px-6 pt-16 pb-12 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow mb-6">Resultados</div>
           <h1 className="font-display text-5xl md:text-7xl leading-[1] max-w-4xl text-balance">
-            Métricas que refletem <span className="italic font-light">rigor</span>.
+            Métricas que refletem <span className="font-light">rigor</span>.
           </h1>
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
           {METRICS.map((m) => (
             <div key={m.label} className="bg-background p-10">
@@ -83,11 +83,11 @@ function Resultados() {
         </div>
       </section>
 
-      <section className="px-6 py-20 bg-secondary">
+      <section className="px-6 py-16 bg-secondary">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <div className="eyebrow mb-4">Casos representativos</div>
-            <h2 className="font-display text-3xl md:text-4xl italic font-light max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl font-light max-w-2xl">
               Identidades preservadas; estratégias publicáveis.
             </h2>
           </div>
@@ -105,11 +105,11 @@ function Resultados() {
         </div>
       </section>
 
-      <section className="px-6 py-24 bg-foreground text-background">
+      <section className="px-6 py-16 bg-foreground text-background">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div className="space-y-6">
             <div className="eyebrow">Diferenciais</div>
-            <h2 className="font-display text-4xl md:text-5xl italic font-light">
+            <h2 className="font-display text-4xl md:text-5xl font-light">
               Por que clientes corporativos nos escolhem.
             </h2>
           </div>

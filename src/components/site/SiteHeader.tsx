@@ -15,7 +15,7 @@ export function SiteHeader() {
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="font-display text-xl font-semibold tracking-tight">
-          MARTINS <span className="text-accent italic font-light">S.A.</span>
+          MARTINS <span className="text-accent font-light">S.A.</span>
         </Link>
         <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-medium">
           {NAV.map((item) => (

@@ -57,11 +57,11 @@ const AREAS = [
 function Atuacao() {
   return (
     <>
-      <section className="px-6 pt-24 pb-16 border-b border-border">
+      <section className="px-6 pt-16 pb-12 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow mb-6">Expertise</div>
           <h1 className="font-display text-5xl md:text-7xl leading-[1] max-w-4xl text-balance">
-            Seis frentes <span className="italic font-light">estratégicas</span> da defesa criminal.
+            Seis frentes <span className="font-light">estratégicas</span> da defesa criminal.
           </h1>
           <p className="mt-8 max-w-2xl text-muted-foreground leading-relaxed">
             Cada área é conduzida diretamente pelo sócio responsável. Nada é
@@ -70,7 +70,7 @@ function Atuacao() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-t border-border">
             {AREAS.map((a) => (
@@ -81,7 +81,7 @@ function Atuacao() {
                 <span className="font-mono text-[10px] tracking-widest text-accent mb-12 block">
                   {a.n} /
                 </span>
-                <h2 className="font-display text-2xl mb-4 italic group-hover:text-accent transition-colors">
+                <h2 className="font-display text-2xl mb-4 group-hover:text-accent transition-colors">
                   {a.title}
                 </h2>
                 <p className="text-sm text-muted-foreground leading-relaxed">{a.text}</p>
@@ -91,11 +91,11 @@ function Atuacao() {
         </div>
       </section>
 
-      <section className="px-6 py-20 bg-secondary">
+      <section className="px-6 py-16 bg-secondary">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="eyebrow">Plantão criminal 24h</div>
           <h2 className="font-display text-3xl md:text-5xl leading-tight">
-            Sua urgência <span className="italic text-accent">não espera</span>.
+            Sua urgência <span className="text-accent">não espera</span>.
           </h2>
           <Link
             to="/contato"

@@ -25,16 +25,16 @@ export const Route = createFileRoute("/sobre")({
 function Sobre() {
   return (
     <>
-      <section className="px-6 pt-24 pb-20 border-b border-border">
+      <section className="px-6 pt-16 pb-12 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow mb-6">O Escritório</div>
           <h1 className="font-display text-5xl md:text-7xl leading-[1] max-w-4xl text-balance">
-            Direito Criminal feito <span className="italic font-light">à mão</span>, caso a caso.
+            Direito Criminal feito <span className="font-light">à mão</span>, caso a caso.
           </h1>
         </div>
       </section>
 
-      <section className="px-6 py-24">
+      <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-16 items-start">
           <div className="md:col-span-5">
             <img
@@ -90,7 +90,7 @@ function Sobre() {
         </div>
       </section>
 
-      <section className="px-6 py-24 bg-foreground text-background">
+      <section className="px-6 py-16 bg-foreground text-background">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="eyebrow">Princípios</div>
           <div className="grid md:grid-cols-3 gap-12">
@@ -100,7 +100,7 @@ function Sobre() {
               ["Estratégia", "Defesa pensada em fases — da investigação ao trânsito em julgado."],
             ].map(([t, d]) => (
               <div key={t} className="space-y-4">
-                <h3 className="font-display text-2xl italic">{t}</h3>
+                <h3 className="font-display text-2xl">{t}</h3>
                 <p className="text-sm text-background/60 leading-relaxed">{d}</p>
               </div>
             ))}

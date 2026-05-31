@@ -9,15 +9,15 @@ import { type ReactNode } from "react";
 
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
-import { WhatsAppFab } from "../components/site/WhatsAppFab";
+import { ChatWidget } from "../components/chat/ChatWidget";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4 text-foreground">
       <div className="max-w-md text-center space-y-6">
-        <div className="font-display text-8xl italic text-accent opacity-20">404</div>
+        <div className="font-display text-8xl text-accent opacity-20">404</div>
         <div className="space-y-2">
-          <h1 className="font-display text-2xl italic">Página não localizada</h1>
+          <h1 className="font-display text-2xl">Página não localizada</h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
             O conteúdo que você busca pode ter sido movido ou não está mais disponível.
           </p>
@@ -40,7 +40,7 @@ function ErrorComponent({ reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4 text-foreground">
       <div className="max-w-md text-center space-y-6">
-        <div className="font-display text-2xl italic">Instabilidade Técnica</div>
+        <div className="font-display text-2xl">Instabilidade Técnica</div>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Ocorreu uma falha inesperada. Nossa equipe técnica já foi notificada.
         </p>
@@ -83,8 +83,8 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
-        <WhatsAppFab />
       </div>
+      <ChatWidget />
     </QueryClientProvider>
   );
 }

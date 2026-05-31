@@ -25,7 +25,7 @@ function AdminDashboard() {
       <aside className="w-64 border-r border-border flex flex-col bg-white">
         <div className="p-8 border-b border-border">
           <div className="font-display text-xl tracking-tight">
-            Martins <span className="italic font-light text-accent">Admin</span>
+            Martins <span className="font-light text-accent">Admin</span>
           </div>
         </div>
         
@@ -61,7 +61,7 @@ function AdminDashboard() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto">
         <header className="h-16 border-b border-border flex items-center justify-between px-8 bg-white sticky top-0 z-10">
-          <h1 className="font-display text-lg italic">
+          <h1 className="font-display text-lg">
             {activeTab === "overview" && "Visão Geral"}
             {activeTab === "leads" && "Gestão de Leads"}
             {activeTab === "calendar" && "Agenda Técnica"}
@@ -200,7 +200,7 @@ function CalendarView() {
     <div className="bg-white border border-border p-12 text-center space-y-4">
       <Calendar className="mx-auto text-accent opacity-20" size={48} />
       <div className="space-y-1">
-        <h3 className="font-display text-xl italic">Agenda Estratégica</h3>
+        <h3 className="font-display text-xl">Agenda Estratégica</h3>
         <p className="text-muted-foreground text-sm max-w-sm mx-auto">
           Módulo de visualização completa do calendário em desenvolvimento. Use o dashboard para ver agendamentos imediatos.
         </p>

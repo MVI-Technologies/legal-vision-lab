@@ -57,12 +57,12 @@ const ARTICLES = [
 function Artigos() {
   return (
     <>
-      <section className="px-6 pt-24 pb-16 border-b border-border">
+      <section className="px-6 pt-16 pb-12 border-b border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <div className="eyebrow mb-6">Artigos</div>
             <h1 className="font-display text-5xl md:text-7xl leading-[1] text-balance">
-              Análise técnica <span className="italic font-light">aplicada</span>.
+              Análise técnica <span className="font-light">aplicada</span>.
             </h1>
           </div>
           <p className="text-muted-foreground max-w-sm leading-relaxed">
@@ -72,7 +72,7 @@ function Artigos() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-16">
         <div className="max-w-5xl mx-auto">
           <ul className="divide-y divide-border border-y border-border">
             {ARTICLES.map((a) => (
@@ -102,10 +102,10 @@ function Artigos() {
         </div>
       </section>
 
-      <section className="px-6 py-20 bg-secondary">
+      <section className="px-6 py-16 bg-secondary">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="eyebrow">Newsletter Restrita</div>
-          <h2 className="font-display text-3xl md:text-4xl italic font-light">
+          <h2 className="font-display text-3xl md:text-4xl font-light">
             Reservada a profissionais e clientes do escritório.
           </h2>
           <form className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto pt-4">

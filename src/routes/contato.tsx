@@ -58,16 +58,16 @@ function Contato() {
 
   return (
     <>
-      <section className="px-6 pt-24 pb-16 border-b border-border">
+      <section className="px-6 pt-16 pb-12 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="eyebrow mb-6">Contato</div>
           <h1 className="font-display text-5xl md:text-7xl leading-[1] max-w-4xl text-balance">
-            Análise <span className="italic font-light">confidencial</span>.
+            Análise <span className="font-light">confidencial</span>.
           </h1>
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-16">
           <div className="md:col-span-5 space-y-10">
             <div className="space-y-3">
@@ -121,7 +121,7 @@ function Contato() {
           <div className="md:col-span-7 bg-secondary p-10 space-y-6 relative overflow-hidden">
             {status !== "scheduling" && status !== "ok" && (
               <form onSubmit={handleSubmit} noValidate className="space-y-6 animate-in fade-in duration-500">
-                <h2 className="font-display text-3xl italic">Inicie uma análise reservada</h2>
+                <h2 className="font-display text-3xl">Inicie uma análise reservada</h2>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <Field label="Nome completo" name="nome" required />
                   <Field label="Email corporativo" name="email" type="email" required />
@@ -153,7 +153,7 @@ function Contato() {
 
             {status === "scheduling" && (
               <div className="space-y-6 animate-in slide-in-from-right duration-500">
-                <h2 className="font-display text-3xl italic">Escolha o melhor horário</h2>
+                <h2 className="font-display text-3xl">Escolha o melhor horário</h2>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-mono">Disponibilidade Técnica</p>
                 
                 <div className="grid grid-cols-2 gap-4">
@@ -195,7 +195,7 @@ function Contato() {
                   <TrendingUp size={32} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-display text-2xl italic">Agendamento Confirmado</h3>
+                  <h3 className="font-display text-2xl">Agendamento Confirmado</h3>
                   <p className="text-sm text-muted-foreground max-w-xs mx-auto">
                     Sua análise reservada foi agendada. Você receberá um link seguro via email e WhatsApp em instantes.
                   </p>

@@ -2,12 +2,12 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteFooter() {
   return (
-    <footer className="py-20 px-6 border-t border-border bg-secondary">
+    <footer className="py-12 px-6 border-t border-border bg-secondary">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-2 space-y-6">
             <div className="font-display text-2xl font-semibold tracking-tight">
-              MARTINS <span className="text-accent italic font-light">S.A.</span>
+              MARTINS <span className="text-accent font-light">S.A.</span>
             </div>
             <p className="max-w-xs text-xs text-muted-foreground leading-loose">
               Excelência jurídica pautada no sigilo absoluto e no rigor técnico.
@@ -50,7 +50,7 @@ export function SiteFooter() {
             </p>
           </div>
         </div>
-        <div className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row justify-between gap-6">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between gap-6">
           <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
             © {new Date().getFullYear()} Martins Sociedade de Advogados. Todos os direitos reservados.
           </p>
