@@ -67,7 +67,7 @@
   --muted: #EBE4DD;
   --muted-foreground: #666666;
 
-  --accent: #8B6914; /* aged gold */
+  --accent: #8B6914; /* aged gold for light mode */
   --accent-foreground: #FFFFFF;
 
   --destructive: #8B0000;
@@ -82,24 +82,24 @@
 }
 
 .dark {
-  --background: #1A1A1A;
+  --background: #1F201D;
   --foreground: #F5F0EB;
   --card: #141414;
   --card-foreground: #F5F0EB;
   --popover: #141414;
   --popover-foreground: #F5F0EB;
   --primary: #F5F0EB;
-  --primary-foreground: #1A1A1A;
+  --primary-foreground: #1F201D;
   --secondary: #262626;
   --secondary-foreground: #F5F0EB;
   --muted: #262626;
   --muted-foreground: #A3A3A3;
-  --accent: #8B6914;
+  --accent: #D4B26F;
   --accent-foreground: #FFFFFF;
   --border: rgba(245, 240, 235, 0.1);
   --input: rgba(245, 240, 235, 0.15);
-  --ring: #8B6914;
-  --surface: #1A1A1A;
+  --ring: #D4B26F;
+  --surface: #1F201D;
 }
 
 @layer base {

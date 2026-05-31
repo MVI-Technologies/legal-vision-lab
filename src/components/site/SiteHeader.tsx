@@ -13,7 +13,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#1A1A1A] border-b border-white/10 text-[#F5F0EB]">
+    <nav className="sticky top-0 z-50 bg-[#1F201D] border-b border-white/10 text-[#F5F0EB]">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="text-white hover:text-accent transition-colors">
           <Logo />
@@ -46,7 +46,7 @@ export function SiteHeader() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-[#1A1A1A] px-6 py-6 space-y-4 text-zinc-300">
+        <div className="md:hidden border-t border-white/10 bg-[#1F201D] px-6 py-6 space-y-4 text-zinc-300">
           {NAV.map((item) => (
             <Link
               key={item.to}

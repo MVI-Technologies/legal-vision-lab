@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import lawyerConfidence from "@/assets/lawyer_br.png";
 import profileTailoring from "@/assets/profile-tailoring.jpg";
-import heroBg from "@/assets/hero_bg_br.png";
+import heroBg from "@/assets/hero_bg_graphite.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const Route = createFileRoute("/")({
@@ -73,13 +73,13 @@ function Home() {
       </div>
 
       {/* Hero */}
-      <section className="dark relative bg-background text-foreground pt-12 md:pt-16 pb-20 md:pb-32 px-6 overflow-hidden">
-        {/* Abstract Background Matching Image */}
-        <div className="absolute inset-0 z-0 bg-background">
+      <section className="dark relative bg-[#1F201D] text-foreground pt-12 md:pt-16 pb-20 md:pb-32 px-6 overflow-hidden">
+        {/* Graphite texture background */}
+        <div className="absolute inset-0 z-0 bg-[#1F201D]">
           <img 
             src={heroBg} 
             alt="" 
-            className="w-full h-full object-cover opacity-70 [mask-image:linear-gradient(to_bottom,transparent_40%,black_80%)] md:[mask-image:linear-gradient(to_right,transparent_40%,black_80%)]" 
+            className="w-full h-full object-cover opacity-90" 
           />
         </div>
         
@@ -128,9 +128,9 @@ function Home() {
                 alt="Sócio fundador em escritório jurídico de alto padrão"
                 width={896}
                 height={1120}
-                className="w-full aspect-[4/5] md:aspect-[3/4] max-h-[50vh] md:max-h-[65vh] object-cover object-top shadow-2xl shadow-black/50 border border-white/5 rounded-none"
+                className="w-full aspect-[4/5] md:aspect-[3/4] max-h-[50vh] md:max-h-[65vh] object-cover object-top shadow-2xl shadow-black/50 border border-white/5 rounded-none filter grayscale contrast-125 brightness-[0.7] sepia-[0.20] transition-all duration-700 hover:brightness-[0.8] hover:sepia-0"
               />
-              <div className="absolute -bottom-10 -left-2 sm:-left-6 md:-left-12 max-w-[280px] bg-background/95 backdrop-blur-xl p-6 md:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-none border border-foreground/5">
+              <div className="absolute -bottom-10 -left-2 sm:-left-6 md:-left-12 max-w-[280px] bg-[#1F201D]/90 backdrop-blur-xl p-6 md:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.5)] rounded-none border border-[#D4B26F]/20">
                 <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground block mb-2">
                   Atuação Presencial
                 </span>
@@ -142,7 +142,7 @@ function Home() {
       </section>
 
       {/* Expertise grid (inverted) */}
-      <section className="py-16 px-6 bg-gradient-to-b from-[#1A1A1A] to-[#1C1C1C] text-background reveal-on-scroll opacity-0 translate-y-4">
+      <section className="py-16 px-6 bg-[#191919] text-background reveal-on-scroll opacity-0 translate-y-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8">
             <h2 className="font-display text-4xl md:text-5xl font-light">
